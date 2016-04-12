@@ -2,9 +2,11 @@
 <html>
     <head>
         <title>Laravel</title>
-
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
+        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="{{ URL::asset('bootstrap/js/bootstrap.js') }}"></script>
+        <link rel="stylesheet" href="{{ URL::asset('bootstrap/css/bootstrap.css') }}" />
+        <link rel="stylesheet" href="{{ URL::asset('bootstrap/css/bootstrap-theme.css') }}" />
         <style>
             html, body {
                 height: 100%;
