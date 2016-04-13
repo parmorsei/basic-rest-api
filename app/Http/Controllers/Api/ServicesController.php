@@ -46,30 +46,24 @@ class ServicesController extends Controller {
 
         $service = new BasicServices();
 
-     
         try {
             switch ($api) {
                 case'items':
-
                     $results = $service->items($r);
-
+                    return $this->responeFormat(200, 'success', $results);
                     break;
                 default:
-                    return $this->errorFormat(404, 'Api not declare.');
+                    return $this->errorFormat(400, 'Api not declare.');
                     break;
-
-                    DB::commit();
-                    return $this->responeFormat(200, 'success', $results);
             }
-        } catch (Exception $e) {
-            DB::rollBack();
+        } catch (\Exception $e) {
+
             if ($this->_debug) {
                 $message = $e->getMessage();
             } else {
                 $message = 'Error by case';
             }
-
-            return $this->errorFormat(404, $message);
+            return $this->errorFormat(400, $message);
         }
     }
 

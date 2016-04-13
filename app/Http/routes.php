@@ -16,7 +16,7 @@ Route::get('/', [
 ]);
 
 Route::group(['middleware' => 'guest'], function() {
-    Route::get('/api/{version}/basic/{api}', [
+    Route::any('/api/{version}/basic/{api}', [
         'as' => 'api', 'uses' => 'Api\ServicesController@basic'
     ]);
 });

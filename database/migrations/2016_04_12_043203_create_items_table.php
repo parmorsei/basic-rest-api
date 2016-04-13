@@ -11,11 +11,11 @@ class CreateItemsTable extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('items', function (Blueprint $table) {
-            $table->index('name');
-            $table->index('descriptions');
-            $table->index('status');
-            $table->timestamps();
+        Schema::create('items', function ( $collection) {
+
+            $collection->index('name');
+            $collection->unique('email')->unique();
+            $collection->index('descriptions');
         });
     }
 
