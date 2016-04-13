@@ -54,7 +54,7 @@ Code Guild
   - App\Http\Controllers\Api\ServicesController  this ServicesController is controller user access operations and handle respones
   - App\Lib\Api\BasicServices BasicServices is processor activity about fuctions
   - App\Models\Item Model
-
+  - App\Lib\Api\CoreAbstract  Transform data model respones.
 
 Examples
 ------------
