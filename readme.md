@@ -62,7 +62,7 @@ Examples
 
 **Path :: /api/1/basic/items**
 
-### Method "GET"  /api/1/basic/items 
+** Method "GET"  /api/1/basic/items **
 
 restpone data list 
 
@@ -71,7 +71,7 @@ restpone data list
     page : numeric
     limit : numeric
 ```
-**Sample**
+**Sample  curl command**
 ```php
 curl -X GET -G 'http://xxx/api/1/basic/items' -d 'page=0&limit=10'
 ```
@@ -120,6 +120,111 @@ curl -X GET -G 'http://xxx/api/1/basic/items' -d 'page=0&limit=10'
 **Error 400**
 ```php
 {"code":400,"error":"xxx" }"}
+```
+
+
+** Method "POST"  /api/1/basic/items **
+
+create data 
+
+**Params**
+```php
+    name : string*
+    email : email format*
+    description : string
+```
+**Sample curl command**
+```php
+curl -i -X POST -H "Content-Type: multipart/form-data" --form name="maethee"  --form email="testbasic@gmail.com" --form descriptions="test" http://xxx/api/1/basic/items
+```
+**Respone 200**
+```php
+  {
+  "code": 200,
+  "message": "success",
+  "data": {
+    "name": "maethee",
+    "email": "parmorsei@2gmail.com",
+    "descriptions": "test",
+    "updated_at": "2016-04-13 14:39:08",
+    "created_at": "2016-04-13 14:39:08",
+    "_id": "570e5a0ccf2bdf047737aad5"
+  }
+}
+```
+**Error 400**
+```php
+{
+  "code": 400,
+  "error": "{\"name\":[\"The name field is required.\"],\"email\":[\"The email field is required.\"]}"
+}
+```
+
+** Method "PUT"  /api/1/basic/items **
+
+update data 
+
+**Params**
+```php
+    id : key*
+    name : string*
+    email : email format*
+    description : string
+```
+**Sample curl command**
+```php
+curl -X PUT -d id=570e564fcf2bdf047737aad4 -d name=val2 -d email=parmorsei@gmail.com http://xxx/api/1/basic/items
+```
+**Respone 200**
+```php
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "_id": "570e564fcf2bdf047737aad4",
+    "name": "val2",
+    "email": "parmorsei@gmail.com",
+    "descriptions": null,
+    "updated_at": "2016-04-13 14:37:11",
+    "created_at": "2016-04-13 14:23:11"
+  }
+}
+```
+**Error 400**
+```php
+{
+  "code": 400,
+  "error": "{\"name\":[\"The name field is required.\"]}"
+}
+```
+
+
+** Method "DELETE"  /api/1/basic/items **
+
+update data 
+
+**Params**
+```php
+    id : key*
+```
+**Sample curl command**
+```php
+curl -X DELETE -d id=570e5a0ccf2bdf047737aad5  http://xxx/api/1/basic/items
+```
+**Respone 200**
+```php
+{
+  "code": 200,
+  "message": "success",
+  "data": true
+}
+```
+**Error 400**
+```php
+{
+  "code": 400,
+  "error": "{\"id\":[\"The id field is required.\"]}"
+}
 ```
 
 
