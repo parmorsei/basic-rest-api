@@ -6,7 +6,7 @@ Installation
 Libraries rest apt with Mongodb
 ```
 composer require jenssegers/mongodb
-
+```
 Configuration
 -------------
 
@@ -30,7 +30,7 @@ And add a new mongodb connection:
         'db' => 'admin' // sets the authentication database required by mongo 3
     ]
 ],
-
+```
 Create collection and set unique email
 
 ```php
@@ -62,9 +62,10 @@ Examples
 
 **Path :: /api/1/basic/items**
 
-### Method "GET"  /api/1/basic/items
-   
-    restpone data list 
+### Method "GET"  /api/1/basic/items 
+
+restpone data list 
+
 **Params**
 ```php
     page : numeric
